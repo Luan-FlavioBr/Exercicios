@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 public class JavaApplication2 {
     public static void main(String[] args) {
-        ex02();
+        //JOptionPane.show
      }
     
     public static void ex01(){
