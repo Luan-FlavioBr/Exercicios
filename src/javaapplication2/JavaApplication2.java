@@ -73,6 +73,17 @@ public class JavaApplication2 {
         int diasInformados = Integer.parseInt(JOptionPane.showInputDialog("Informe seu salário: R$")); 
         int anos, meses, dias;
         
-        System.out.println(diasInformados / 365.0);
+        anos = diasInformados / 365;
+        
+        diasInformados %= 365;
+        meses = diasInformados / 30;
+        
+        diasInformados %= 30;
+        dias = diasInformados;
+        
+        String mensagem = String.format("Anos: %d \nMeses: %d"
+                + "\nDias: %d", anos, meses, dias);
+        System.out.println(mensagem);
+             
     }
 }
