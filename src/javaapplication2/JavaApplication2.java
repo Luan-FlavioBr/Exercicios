@@ -4,8 +4,37 @@ import javax.swing.JOptionPane;
 
 public class JavaApplication2 {
     public static void main(String[] args) {
-        //JOptionPane.show
-        ex04();
+        // Opções do menu dropdown
+        String[] options = {"Ex01", "Ex02", "Ex03", "Ex04"};
+
+        // Exibe o menu dropdown e obtém a opção selecionada pelo usuário
+        String selectedOption = (String) JOptionPane.showInputDialog(null, 
+                                    "Selecione uma opção:", "Menu Dropdown", 
+                                    JOptionPane.QUESTION_MESSAGE, null, 
+                                    options, options[0]);
+
+        // Verifica a opção selecionada e executa a ação correspondente
+        if (selectedOption != null) {
+            switch (selectedOption) {
+                case "Ex01":
+                    ex01();
+                    break;
+                case "Ex02":
+                    ex02();
+                    break;
+                case "Ex03":
+                    ex03();
+                    break;
+                case "Ex04":
+                    ex04();
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Opção inválida");
+            }
+        } else {
+            // Caso o usuário tenha cancelado a seleção
+            JOptionPane.showMessageDialog(null, "Nenhuma opção selecionada");
+        }
      }
     
     public static void ex01(){
@@ -70,7 +99,7 @@ public class JavaApplication2 {
     }
     
     public static void ex04(){
-        int diasInformados = Integer.parseInt(JOptionPane.showInputDialog("Informe seu salário: R$")); 
+        int diasInformados = Integer.parseInt(JOptionPane.showInputDialog("Informe os dias: ")); 
         int anos, meses, dias;
         
         anos = diasInformados / 365;
@@ -83,7 +112,7 @@ public class JavaApplication2 {
         
         String mensagem = String.format("Anos: %d \nMeses: %d"
                 + "\nDias: %d", anos, meses, dias);
-        System.out.println(mensagem);
+        JOptionPane.showMessageDialog(null, mensagem);
              
     }
 }
